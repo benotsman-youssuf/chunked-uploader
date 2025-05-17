@@ -1,7 +1,8 @@
 import fs from "node:fs";
+import path from "node:path";
 
 const assembleChunks = async (filename, totalChunks) => {
-  const outputPath = `./uploads/${filename}`;
+  const outputPath = path.join('./src/uploads', filename);
   const writeStream = fs.createWriteStream(outputPath);
 
   try {
